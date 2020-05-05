@@ -1,0 +1,13 @@
+{{#partial "content"}}
+    {{#if animal}}
+        {{#each animal}}
+            <p>{{animalId}}</p>
+            <p>{{name}}</p>
+        {{/each}}
+    {{else}}
+        <p>not yet</p>
+
+    {{/if}}
+
+{{/partial}}
+{{>layout.hbs}}
