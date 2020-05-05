@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{#block "title"}}hero{{/block}}</title>
+    <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+    <link rel="stylesheet" href='/app.css'>
+</head>
+<body>
+
+<ul class="nav nav-tabs">
+    <li role="presentation" class="active"><a href="#">Home</a></li>
+    <li role="presentation"><a href="/lion">Report ordinary animal</a></li>
+    <li role="presentation"><a href="/elephant">Report Endangered animal</a></li>
+</ul>
+<div class="container">
+    <!--begin main template-->
+
+    {{#block "content"}}
+    {{/block}}
+
+</div>
+<!--end main template-->
+{{#block "footer"}}
+    <footer class="page-footer ">
+        <div class="footer-copyright text-center py-3">© 2020 Copyright:
+            <a href="https://wildlife.com/"> wildlife.com</a>
+        </div>
+    </footer>
+    </body>
+    </html>
+{{/block}}

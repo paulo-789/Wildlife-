@@ -1,0 +1,22 @@
+{{#partial "content"}}
+    <h2>Please fill the form to report </h2>
+   <form action ="/post" method="Post">
+    <div class="row">
+        <div class="col-3">
+            <label for ="name">Ranger Name</label>
+            <input id ="name" class="form-control" name ="name" type="text">
+        </div>
+        <div class="col-3">
+            <label for="Id" >Age </label>
+            <input id="Id" class="form-control" name="Id" type="text">
+        </div>
+        <div class="col-3">
+            <label for="location" >Age </label>
+            <input id="location" class="form-control" name="location" type="text">
+        </div>
+    </div>
+       <br>
+       <button type="submit" class="btn btn-primary">submit</button>
+   </form>
+{{/partial}}
+{{>layout.hbs}}
