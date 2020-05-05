@@ -9,6 +9,7 @@ public  abstract class Allanimals {
     public int id;
     public String health;
     public int age;
+    public String type;
 
 //    public Allanimals(String name, int animalId,String health,int age) {
 //        this.name = name;
@@ -48,12 +49,13 @@ public  abstract class Allanimals {
     }
     public void save(){
         try(Connection con = DB.sql2o.open()){
-            String sql = "INSERT INTO allanimals (name, animalid,health,age) VALUES (:name :animalId:health:age)";
+            String sql = "INSERT INTO allanimals (name, animalid,health,age,type) VALUES (:name :animalId:health:age:type)";
             this.id = (int) con .createQuery(sql,true)
                     .addParameter("name",this.name)
                     .addParameter("animalId",this.animalId)
                     .addParameter("health",this.health)
                     .addParameter("age",this.age)
+                    .addParameter("type",this.type)
                     .executeUpdate()
                     .getKey();
         }

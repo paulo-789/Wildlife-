@@ -70,11 +70,11 @@ public class SightingTest {
     public void getAllanimals_retriveAllfromDatabase(){
         Sighting testSighting = new Sighting(1,"Zone A","John paul");
         testSighting.save();
-        Allanimals firstAnimal = new Allanimals("lion",testSighting.getId());
+        EndangeredAnimal firstAnimal = new EndangeredAnimal("lion",1,"good",testSighting.getId());
         firstAnimal.save();
-        Allanimals secondAnimal = new Allanimals("lion",testSighting.getId());
+        Animal secondAnimal = new Animal("lion",testSighting.getId());
         secondAnimal.save();
-        Allanimals[] allanimals = new Allanimals[]{firstAnimal,secondAnimal};
-        assertTrue(testSighting.getAllanimals().containsAll(Arrays.asList(allanimals)));
+        Object[] animal = new Object[]{firstAnimal,secondAnimal};
+        assertTrue(testSighting.getAllanimals().containsAll(Arrays.asList(animal)));
     }
 }
