@@ -1,10 +1,11 @@
 {{#partial "content"}}
-    {{#if endangered}}
-        {{#each endangered}}
-           <p>{{animalId}}</p>
+    {{#if Endangered}}
+        {{#each Endangered}}
+           <p>{{animalid}}</p>
            <p>{{name}}</p>
-           <p>{{heath}}</p>
+           <p>{{health}}</p>
            <p>{{age}}</p>
+           <p>{{location}}</p>
     {{/each}}
 {{else}}
     <p>not yet</p>
