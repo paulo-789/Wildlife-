@@ -1,14 +1,14 @@
 {{#partial "content"}}
-    {{#if Animal}}
-        {{#each Animal}}
-            <p>{{name}}</p>
+    {{#if sights}}
+        {{#each sights}}
+            <p>{{animal_id}}</p>
+            <p>{{rangername}}</p>
             <p>{{location}}</p>
 
 
 
         {{/each}}
-    {{else}}
-        <p>not yet</p>
+
 
     {{/if}}
 

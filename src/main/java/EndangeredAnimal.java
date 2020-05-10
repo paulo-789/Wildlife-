@@ -10,7 +10,7 @@ public class EndangeredAnimal {
     public int age;
     private String location;
 
-    public EndangeredAnimal(String name, int animalid, String health, int age,String location) {
+    public EndangeredAnimal(int animalid, String name, String health, int age,String location) {
         this.name = name;
         this.animalid = animalid;
         this.health=health;
@@ -63,10 +63,10 @@ public class EndangeredAnimal {
     }
     public void save(){
         try(Connection con = DB.sql2o.open()){
-            String sql = "INSERT INTO endangered (name, animalid,health,age,location) VALUES (:name :animalid:health:age:location)";
+            String sql = "INSERT INTO endangered (animalid,name,health,age,location) VALUES (:animalid, :name,:health,:age,:location);";
             this.id = (int) con .createQuery(sql,true)
-                    .addParameter("name",this.name)
                     .addParameter("animalid",this.animalid)
+                    .addParameter("name",this.name)
                     .addParameter("health",this.health)
                     .addParameter("age",this.age)
                     .addParameter("location",this.location)

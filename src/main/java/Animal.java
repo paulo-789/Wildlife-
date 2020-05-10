@@ -1,18 +1,16 @@
-
-import org.sql2o.*;
-import java.util.ArrayList;
+import org.sql2o.Connection;
 import java.util.List;
+import java.util.Objects;
 
 public class Animal{
     public String name;
-    public int animalid;
-    private final String location;
+    private String location;
     public int id;
 
-    public Animal(String name, int animalid,String location){
+    public Animal(String name,String location){
         this.name=name;
-        this.animalid=animalid;
         this.location=location;
+
 
     }
 
@@ -21,9 +19,6 @@ public class Animal{
     }
     public String getName() {
         return name;
-    }
-    public int getAnimalsId() {
-        return animalid;
     }
     public int getId(){
         return  id;
@@ -36,6 +31,22 @@ public class Animal{
         } else {
             Animal newAnimal = (Animal) otherAnimal;
             return this.getName().equals(newAnimal.getName());
+        }
+    }
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, location);
+    }
+    public void save(){
+        try(Connection con = DB.sql2o.open()){
+            String sql = "INSERT INTO animal (name,location) VALUES (:name,:location);";
+            this.id = (int) con
+                    .createQuery(sql,true)
+                    .addParameter("name",this.name)
+                    .addParameter("location",this.location)
+                    .throwOnMappingFailure(false)
+                    .executeUpdate()
+                    .getKey();
         }
     }
 
@@ -56,16 +67,6 @@ public class Animal{
             return animals;
         }
     }
-    public void save(){
-        try(Connection con = DB.sql2o.open()){
-            String sql = "INSERT INTO animal (name, animalid,location) VALUES (:name :animalid:location)";
-            this.id = (int) con .createQuery(sql,true)
-                    .addParameter("name",this.name)
-                    .addParameter("animalid",this.animalid)
-                    .addParameter("location",this.location)
-                    .executeUpdate()
-                    .getKey();
-        }
-    }
+
 
 }

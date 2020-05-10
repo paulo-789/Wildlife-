@@ -72,24 +72,24 @@ public class Sighting {
             return sighting;
         }
     }
-    public List<Object>getAllanimals(){
-        List<Object>allanimals = new ArrayList<Object>();
-        try(Connection con = DB.sql2o.open()) {
-            String sqlEndangeredAnimal = "SELECT * FROM allanimals WHERE animalId=:id AND type ='endangered';";
-            List<EndangeredAnimal> endangeredAnimal =con.createQuery(sqlEndangeredAnimal)
-
-                    .addParameter("id" ,this.id)
-                    .throwOnMappingFailure(false)
-                    .executeAndFetch(EndangeredAnimal.class);
-            allanimals.addAll(endangeredAnimal);
-
-            String sqlAnimal = "SELECT * FROM allanimals WHERE animalId=:id AND type = 'animal';";
-            List<Animal>animals = con.createQuery(sqlAnimal)
-                    .addParameter("id",this.id)
-                    .throwOnMappingFailure(false)
-                    .executeAndFetch(Animal.class);
-            allanimals.addAll(animals);
-        }
-        return allanimals;
-    }
+//    public List<Object>getAllanimals(){
+//        List<Object>allanimals = new ArrayList<Object>();
+//        try(Connection con = DB.sql2o.open()) {
+//            String sqlEndangeredAnimal = "SELECT * FROM allanimals WHERE animalId=:id AND type ='endangered';";
+//            List<EndangeredAnimal> endangeredAnimal =con.createQuery(sqlEndangeredAnimal)
+//
+//                    .addParameter("id" ,this.id)
+//                    .throwOnMappingFailure(false)
+//                    .executeAndFetch(EndangeredAnimal.class);
+//            allanimals.addAll(endangeredAnimal);
+//
+//            String sqlAnimal = "SELECT * FROM allanimals WHERE animalId=:id AND type = 'animal';";
+//            List<Animal>animals = con.createQuery(sqlAnimal)
+//                    .addParameter("id",this.id)
+//                    .throwOnMappingFailure(false)
+//                    .executeAndFetch(Animal.class);
+//            allanimals.addAll(animals);
+//        }
+//        return allanimals;
+//    }
 }
