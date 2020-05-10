@@ -1,9 +1,18 @@
 {{#partial "content"}}
     {{#if sights}}
         {{#each sights}}
-            <p>{{animal_id}}</p>
-            <p>{{rangername}}</p>
-            <p>{{location}}</p>
+            <table style="width:100%">
+                <tr>
+                    <th>Animal id</th>
+                    <th>Location</th>
+                    <th>Ranger-name</th>
+                </tr>
+                <tr>
+            <td>{{animal_id}}</td>
+            <td>{{rangername}}</td>
+            <td>{{location}}</td>
+                </tr>
+            </table>
 
 
 

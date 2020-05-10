@@ -66,7 +66,7 @@ public class AnimalTest {
 //    public void save_saveSightIdIntoDB_true(){
 //        Sighting testSighting = new Sighting(1,"Zone A","John paul");
 //        testSighting.save();
-//        Animal testAll = new Animal(1,"","kk");
+//        Animal testAll = new Animal("","kk");
 //        testAll.save();
 //        Animal savedAnimal= Animal.find(testAll.getId());
 //        assertEquals(savedAnimal.getAnimalsId(),testSighting.getId());

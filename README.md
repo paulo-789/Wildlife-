@@ -14,6 +14,11 @@
  * git clone
  * Open the project in Intellij IDEA
  * Run the program 
+### Database setup
+ *CREATE DATABASE wildlife_tracker;
+ *CREATE TABLE animal (id serial PRIMARY KEY,name varchar,location varchar);
+ *CREATE TABLE endangered_animals (id serial primary key,animalid int,name varchar,health varchar,age int,location varchar);
+ *CREATE TABLE sightings (id serial primary key,animal_id varchar,location varchar,ranger_name);
 
 
  

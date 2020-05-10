@@ -1,9 +1,16 @@
 {{#partial "content"}}
     {{#if Animal}}
         {{#each Animal}}
-            <p>{{name}}</p>
-            <p>{{location}}</p>
-
+            <table style="width:100%">
+                <tr>
+                    <th>Name</th>
+                    <th>Location</th>
+                </tr>
+                <tr>
+            <td>{{name}}</td>
+            <td>{{location}}</td>
+                </tr>
+            </table>
 
 
         {{/each}}

@@ -1,12 +1,24 @@
 {{#partial "content"}}
     {{#if Andangered}}
         {{#each Andangered}}
-           <p>{{animalid}}</p>
-           <p>{{name}}</p>
-           <p>{{health}}</p>
-           <p>{{age}}</p>
-           <p>{{location}}</p>
+            <table style="width:100%">
+            <tr>
+                <th>Animalid</th>
+                <th>Name</th>
+                <th>health</th>
+                <th>Age</th>
+                <th>location</th>
+            </tr>
+            <tr>
+           <td>{{animalid}}</td>
+           <td>{{name}}</td>
+           <td>{{health}}</td>
+           <td>{{age}}</td>
+           <td>{{location}}</td>
+            </tr>
+            </table>
     {{/each}}
+
 {{else}}
     <p>not yet</p>
 

@@ -5,11 +5,11 @@ import java.util.List;
 
 public class Sighting {
     private int animal_id;
-    private String location;
     private String rangername;
+    private String location;
     private int id;
 
-    public Sighting(int animal_id,String location,String rangername){
+    public Sighting(int animal_id,String rangername,String location){
         this.animal_id=animal_id;
         this.location=location;
         this.rangername=rangername;
@@ -43,7 +43,7 @@ public class Sighting {
 
     @Override
     public int hashCode() {
-        return Objects.hash(animal_id, location, rangername);
+        return Objects.hash(animal_id, rangername, location);
     }
 
     public void save(){
